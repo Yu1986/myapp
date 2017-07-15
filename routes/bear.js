@@ -38,9 +38,40 @@ function getBears(req, res) {
     });
 }
 
+
+/**
+* @swagger
+* /api/bears:
+*   post:
+*     summary: Create a new bear
+*     description:
+*       "Create a new bear (accessed at POST http://localhost:8080/api/bears)"
+*     tags:
+*       - Bears
+*     parameters:
+*       - name: bear
+*         in: body
+*         schema:
+*           type: object
+*           required:
+*             - name
+*           properties:
+*             username:
+*               type: string
+*           example: {
+*             "name": "somebear",
+*           }
+
+*     responses:
+*       200:
+*         description: OK
+*       404:
+*         description: Invalid auth token
+*/
 function postBears(req, res) {
 	var bear = new Bear();      // create a new instance of the Bear model
 	bear.name = req.body.name;  // set the bears name (comes from the request)
+    console.log(bear.name)
 
     // save the bear and check for errors
     bear.save(function(err) {

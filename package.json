@@ -2,8 +2,10 @@
     "name": "node-api",
     "main": "server.js",
     "dependencies": {
+        "body-parser": "~1.0.1",
         "express": "^4.15.3",
-        "mongoose": "~3.6.13",
-        "body-parser": "~1.0.1"
+        "mongoose": "^4.11.3",
+        "swagger-jsdoc": "^1.9.6",
+        "swagger-ui-express": "^2.0.1"
     }
 }
